@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scientific Calculator Website
 
 A beautiful glassmorphism-styled website featuring a functional scientific calculator and mathematical formulas reference.
@@ -29,3 +30,8 @@ A beautiful glassmorphism-styled website featuring a functional scientific calcu
 - Glassmorphism design with smooth animations
 - Fully responsive layout
 - Keyboard support
+=======
+# Scientific-Calculator-
+Scientific Calculator With Algebraic and Geometric Formulas
+>>>>>>> f8d8363555375b916a1ca63749498934a97e9af7
+
