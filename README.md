@@ -29,4 +29,3 @@ A beautiful glassmorphism-styled website featuring a functional scientific calcu
 - Glassmorphism design with smooth animations
 - Fully responsive layout
 - Keyboard support
-
