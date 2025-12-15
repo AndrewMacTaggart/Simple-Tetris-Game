@@ -18,7 +18,7 @@ A beautiful glassmorphism-styled website featuring a functional scientific calcu
 - Automatically reloads on file changes
 
 **Option 3: HTTP Server**
-- Use any local HTTP server (Node.js, Python PHP, etc.)
+- Use any local HTTP server (Node.js, PHP, etc.)
 - Example with Node.js: `npx http-server`
 - Then open the provided localhost URL in your browser
 
