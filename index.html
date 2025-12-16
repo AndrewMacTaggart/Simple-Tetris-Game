@@ -1,150 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scientific Calculator & Math Formulas</title>
+    <title>Tetris</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Scientific Calculator & Mathematical Formulas</h1>
-    </header>
-
-    <main>
-        <section class="calculator-section">
-            <div class="calculator-container">
-                <div class="calculator-display">
-                    <div class="display-screen" id="display">0</div>
+    <div class="container">
+        <div class="game-header">
+            <h1>TETRIS</h1>
+            <div class="score-container">
+                <div class="score-item">
+                    <span class="label">Score</span>
+                    <span id="score">0</span>
                 </div>
-                <div class="calculator-buttons">
-                    <button class="btn btn-function" data-action="clear">C</button>
-                    <button class="btn btn-function" data-action="clearEntry">CE</button>
-                    <button class="btn btn-function" data-action="backspace">←</button>
-                    <button class="btn btn-function" data-action="divide">÷</button>
-                    
-                    <button class="btn btn-memory" data-action="memoryClear">MC</button>
-                    <button class="btn btn-memory" data-action="memoryRecall">MR</button>
-                    <button class="btn btn-memory" data-action="memoryAdd">M+</button>
-                    <button class="btn btn-memory" data-action="memorySubtract">M-</button>
-                    
-                    <button class="btn btn-scientific" data-action="sin">sin</button>
-                    <button class="btn btn-scientific" data-action="cos">cos</button>
-                    <button class="btn btn-scientific" data-action="tan">tan</button>
-                    <button class="btn btn-operator" data-action="multiply">×</button>
-                    
-                    <button class="btn btn-scientific" data-action="log">log</button>
-                    <button class="btn btn-scientific" data-action="ln">ln</button>
-                    <button class="btn btn-scientific" data-action="power">x^y</button>
-                    <button class="btn btn-operator" data-action="subtract">−</button>
-                    
-                    <button class="btn btn-scientific" data-action="square">x²</button>
-                    <button class="btn btn-scientific" data-action="sqrt">√</button>
-                    <button class="btn btn-constant" data-action="pi">π</button>
-                    <button class="btn btn-operator" data-action="add">+</button>
-                    
-                    <button class="btn btn-number" data-number="7">7</button>
-                    <button class="btn btn-number" data-number="8">8</button>
-                    <button class="btn btn-number" data-number="9">9</button>
-                    <button class="btn btn-operator btn-equals" data-action="equals">=</button>
-                    
-                    <button class="btn btn-number" data-number="4">4</button>
-                    <button class="btn btn-number" data-number="5">5</button>
-                    <button class="btn btn-number" data-number="6">6</button>
-                    
-                    <button class="btn btn-number" data-number="1">1</button>
-                    <button class="btn btn-number" data-number="2">2</button>
-                    <button class="btn btn-number" data-number="3">3</button>
-                    
-                    <button class="btn btn-constant" data-action="e">e</button>
-                    <button class="btn btn-number" data-number="0">0</button>
-                    <button class="btn btn-number" data-action="decimal">.</button>
+                <div class="score-item">
+                    <span class="label">Lines</span>
+                    <span id="lines">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Level</span>
+                    <span id="level">1</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="formulas-section">
-            <h2>Mathematical Formulas Reference</h2>
-            <div class="formulas-container">
-                <div class="formula-category">
-                    <h3>Algebra</h3>
-                    <div class="formula-cards">
-                        <div class="formula-card">
-                            <h4>Quadratic Formula</h4>
-                            <div class="formula-content">
-                                <p>For ax² + bx + c = 0:</p>
-                                <p class="formula">x = (-b ± √(b² - 4ac)) / 2a</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Distance Formula</h4>
-                            <div class="formula-content">
-                                <p>Distance between two points:</p>
-                                <p class="formula">d = √[(x₂ - x₁)² + (y₂ - y₁)²]</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Slope Formula</h4>
-                            <div class="formula-content">
-                                <p>Slope of a line:</p>
-                                <p class="formula">m = (y₂ - y₁) / (x₂ - x₁)</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="game-area">
+            <div class="sidebar">
+                <div class="next-piece-container">
+                    <h3>Next</h3>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
                 </div>
 
-                <div class="formula-category">
-                    <h3>Geometry</h3>
-                    <div class="formula-cards">
-                        <div class="formula-card">
-                            <h4>Pythagorean Theorem</h4>
-                            <div class="formula-content">
-                                <p>For a right triangle:</p>
-                                <p class="formula">a² + b² = c²</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Area of Circle</h4>
-                            <div class="formula-content">
-                                <p>Area of a circle:</p>
-                                <p class="formula">A = πr²</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Area of Rectangle</h4>
-                            <div class="formula-content">
-                                <p>Area of a rectangle:</p>
-                                <p class="formula">A = l × w</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Area of Triangle</h4>
-                            <div class="formula-content">
-                                <p>Area of a triangle:</p>
-                                <p class="formula">A = ½ × b × h</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Volume of Sphere</h4>
-                            <div class="formula-content">
-                                <p>Volume of a sphere:</p>
-                                <p class="formula">V = (4/3)πr³</p>
-                            </div>
-                        </div>
-                        <div class="formula-card">
-                            <h4>Volume of Cylinder</h4>
-                            <div class="formula-content">
-                                <p>Volume of a cylinder:</p>
-                                <p class="formula">V = πr²h</p>
-                            </div>
-                        </div>
+                <div class="controls">
+                    <h3>Controls</h3>
+                    <div class="control-item">
+                        <span>← →</span>
+                        <span>Move</span>
+                    </div>
+                    <div class="control-item">
+                        <span>↓</span>
+                        <span>Soft Drop</span>
+                    </div>
+                    <div class="control-item">
+                        <span>↑ / Space</span>
+                        <span>Rotate</span>
+                    </div>
+                    <div class="control-item">
+                        <span>P</span>
+                        <span>Pause</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="game-board-container">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div id="gameOver" class="game-over hidden">
+                    <h2>Game Over</h2>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <button id="restartBtn">Play Again</button>
+                </div>
+                <div id="pause" class="pause hidden">
+                    <h2>Paused</h2>
+                    <p>Press P to resume</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
